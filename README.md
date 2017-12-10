@@ -2,7 +2,7 @@
 
 This is an OpenSCAD project to create a 3d printable Chimera extruder mount for the Anet A8 3D Printer.
 
-![progress screenshot of rendering of project](/graphics/prograss.png?raw=true "Progress")
+![progress screenshot of rendering of project](/graphics/progress.png?raw=true "Progress")
 
 # What is the Anet A8
 
