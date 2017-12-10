@@ -10,4 +10,4 @@ The Anet A8 is a low-cost 3D printer kit from China which clones the Prusa I3, a
 
 # What is the Chimera Hotend
 
-The Chimera hotend is a hot-end from E3D which supports the extrusion of two different types of plastic while using the same heatsink.  It reduces the overall size of the hotend compared to two separate hotends.
+[The Chimera Hotend](https://wiki.e3d-online.com/Cyclops_&_Chimera_Documentation#Mounting_Considerations) is a hot-end from E3D which supports the extrusion of two different types of plastic while using the same heatsink.  It reduces the overall size of the hotend compared to two separate hotends.
