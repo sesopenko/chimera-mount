@@ -53,8 +53,6 @@ module SunkHoleM3Tolerabe(depth, tolerance) {
             CircleTolerableLinear(m3screwHeadClearanceRadius, tolerance, holeFragments);
         }
     }
-    
-    
 }
 
 module CircleTolerableLinear(holeRadius, tolerance, holeFragments) {
@@ -118,8 +116,6 @@ module SCS8UU(depth, tolerance = 0) {
     translate([fourthHoleX, fourthHoleY, 0]) {
         SunkHoleM3Tolerabe(depth, tolerance);
     }
-
-
 }
 
 module BasePlate(topBearingGap, depth) {
@@ -163,9 +159,7 @@ module BasePlate(topBearingGap, depth) {
 }
 
 plateDepth = 5.2;
-
 // The gap between the two bearings on the top of the base plate.
 topBearingGap = 1;
-
 
 BasePlate(topBearingGap, plateDepth);
