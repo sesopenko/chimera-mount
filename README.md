@@ -1,4 +1,4 @@
-# Anet A8 Chimera Mount
+# Sean's Anet A8 Chimera Mount
 
 This is an OpenSCAD project to create a 3d printable Chimera extruder mount for the Anet A8 3D Printer.
 
