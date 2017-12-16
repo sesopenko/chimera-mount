@@ -118,10 +118,45 @@ module SCS8UU(depth, tolerance = 0) {
     }
 }
 
-module BasePlate(topBearingGap, depth) {
+module XCableClamp(topBearingGap, plateWidthExtra) {
+    // Distance from the center of each rod.
+    linearRodSpacingCenter = linearRodDistanceOuter - (linearRodWidth * 2) / 2;
+    // Height of the bearings, oriented horizontally to slide along the rods.
+    bearingHeight = 34;
+    // Gap between the bearings, as they slide along the rods.
+
+    
+    bearingGapTolerance = 2;
+    //mm tolerance to allow for the cable clamp
+    // Clamp is to fit between here
+    spaceConsumedPerBearing = bearingHeight / 2;
+    numRods = 2;
+    clampHeight = linearRodSpacingCenter - spaceConsumedPerBearing * numRods - bearingGapTolerance;
+    
+    bearingWidth = 30;
+    clampWidth = bearingWidth * 2 + topBearingGap;
+
+    cableWidth = 6;
+    // mm of "backing" for the cable clamp, giving dimensional structure
+    structuralAllownace = 3;
+    // mm of additional space allotted for the cable
+    cableSlipAllowance = 1;
+    clampDepth = cableWidth + structuralAllownace + cableSlipAllowance;
+
+    topBearingBottom = bearingHeight + plateWidthExtra + bearingGapTolerance / 2;
+    color([13 / 256, 83 / 256, 196 / 256, 1])
+    translate([0, clampHeight, 0]) {
+        translate([plateWidthExtra, topBearingBottom, 0]) {
+            rotate([180, 0, 0]) {
+                cube([clampWidth, clampHeight, clampDepth]);
+            }
+        }
+    }
+}
+
+module BasePlate(topBearingGap, depth, plateWidthExtra) {
     bearingWidth = 30;
     bearingHeight = 34;
-    plateWidthExtra = 2;
     plateWidth = plateWidthExtra + bearingWidth + topBearingGap + bearingWidth + plateWidthExtra;
     lowerBearingXOffset = (plateWidth / 2) - (bearingWidth / 2);
     lowerBearingYOffset = linearRodGapCenter;
@@ -161,5 +196,8 @@ module BasePlate(topBearingGap, depth) {
 plateDepth = 5.2;
 // The gap between the two bearings on the top of the base plate.
 topBearingGap = 1;
+plateWidthExtra = 2;
 
-BasePlate(topBearingGap, plateDepth);
+BasePlate(topBearingGap, plateDepth, plateWidthExtra);
+
+XCableClamp(topBearingGap, plateWidthExtra);
